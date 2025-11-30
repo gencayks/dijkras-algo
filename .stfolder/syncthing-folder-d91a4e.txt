@@ -1,0 +1,5 @@
+# This directory is a Syncthing folder marker.
+# Do not delete.
+
+folderID: fhlcw-jexmi
+created: 2025-11-30T17:25:21+01:00
