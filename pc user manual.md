@@ -383,11 +383,11 @@ You are now the operator of a Distributed Compute Cluster.
 
 Session Closed.
 
-|**Task**|**Command**|**Where to type it?**|
-|---|---|---|
-|**Start Working**|`ssh compute`|Mac Terminal|
-|**Enter Workspace**|`lab`|VS Code Terminal|
-|**Chat with AI**|`ai`|Bazzite Terminal|
-|**Open AI Web**|`http://compute:8080`|iPhone / Mac Safari|
-|**Update Everything**|`update-all`|Bazzite Terminal|
-|**Save Your Work**|`git add . && git commit -m "Done" && git push`|Lab Terminal|
+| **Task**              | **Command**                                     | **Where to type it?** |
+| --------------------- | ----------------------------------------------- | --------------------- |
+| **Start Working**     | `ssh compute`                                   | Mac Terminal          |
+| **Enter Workspace**   | `lab`                                           | VS Code Terminal      |
+| **Chat with AI**      | `ai`                                            | Bazzite Terminal      |
+| **Open AI Web**       | `http://compute:8080`                           | iPhone / Mac Safari   |
+| **Update Everything** | `update-all`                                    | Bazzite Terminal      |
+| **Save Your Work**    | `git add . && git commit -m "Done" && git push` | Lab Terminal          |
