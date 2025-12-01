@@ -806,3 +806,5 @@ If you downloaded too many LLMs:
 |**Yearly**|Dust PC|(Physical)|
 
 **You are now fully certified to run this cluster.**
+
+podman start ollama open-webui adguard heimdall glances actual-budget vikunja pdf-tools anki-server
