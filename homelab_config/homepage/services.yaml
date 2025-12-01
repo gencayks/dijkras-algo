@@ -1,0 +1,19 @@
+---
+- My_Cluster:
+    - AI_Tutor:
+        icon: openai
+        href: http://compute:8080
+        description: Qwen 7B
+    - Math_Lab:
+        icon: jupyter
+        href: http://compute:8888
+        description: Jupyter
+    - AdGuard:
+        icon: adguard-home
+        href: http://compute:3002
+        description: Network Defense
+    - Syncthing:
+        icon: syncthing
+        href: http://compute:8384
+        description: File Sync
+
