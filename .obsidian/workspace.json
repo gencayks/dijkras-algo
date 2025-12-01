@@ -182,6 +182,8 @@
   },
   "active": "0e981945fda9a133",
   "lastOpenFiles": [
+    "homelab_config/prometheus.yml",
+    "homelab_config",
     "kazo 3512.md",
     "pc user manual.md",
     "Playground/media/videos/math_beauty/720p30/FirstScene.mp4",
@@ -194,7 +196,6 @@
     "Playground/media/texts/27044a387e056f4c.svg",
     "Playground/media/texts",
     "Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene",
-    "Playground/media/videos/math_beauty/720p30/partial_movie_files",
-    "Playground/media/videos/math_beauty/720p30"
+    "Playground/media/videos/math_beauty/720p30/partial_movie_files"
   ]
 }
