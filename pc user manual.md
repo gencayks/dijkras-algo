@@ -391,3 +391,418 @@ Session Closed.
 | **Open AI Web**       | `http://compute:8080`                           | iPhone / Mac Safari   |
 | **Update Everything** | `update-all`                                    | Bazzite Terminal      |
 | **Save Your Work**    | `git add . && git commit -m "Done" && git push` | Lab Terminal          |
+
+
+
+This is the **Master Operations Manual** for your Distributed Applied Math Cluster.
+
+You have transitioned from a standard computer user to a **Systems Administrator**. This document covers every component we built, how to operate it, and how to maintain it.
+
+**Action:** Save this text as `README.md` in the root of your `University` folder so it syncs to all your devices.
+
+---
+
+# 🚀 Distributed Compute Cluster: Operations Manual
+
+## 1. System Architecture
+
+**Philosophy:** Separation of concerns.
+
+- **The Server (Bazzite/PC):** Heavy compute, AI inference, Compilation, File Hosting.
+    
+- **The Console (MacBook M4):** The interface for coding and writing. Distraction-free.
+    
+- **The Controller (iPhone 16):** Authentication, Ignition (WoL), and quick reference.
+    
+
+---
+
+## 2. Daily Start-Up Sequence
+
+### ⚡ Ignition (Wake-on-LAN)
+
+1. **Condition:** iPhone must be on **Local Wi-Fi**.
+    
+2. **Action:** Open **"Wake Me Up"** app on iPhone → Tap **PC**.
+    
+3. **Verification:** Listen for fans spinning up.
+    
+4. **Troubleshooting:** If it fails, ensure the PC wasn't hard-unplugged (Windows driver settings persist only if Soft-Shutdown was used).
+    
+
+### 🔗 Connection
+
+1. **On Mac:** Open Terminal or VS Code.
+    
+2. **Connect:** `ssh compute` (or use VS Code Remote-SSH extension).
+    
+3. **Tunneling:** Your SSH config automatically forwards ports `8080`, `3003`, `8888`, etc., to `localhost`.
+    
+
+### 🌍 Remote Access (Cafe Mode)
+
+1. **Pre-requisite:** PC must be **ON** (Wake-on-LAN does not work over internet without a bridge).
+    
+2. **Network:** Enable **Tailscale** on Mac/iPhone.
+    
+3. **Exit Node:** (Optional) In Tailscale settings, set "Exit Node" to your PC to encrypt public Wi-Fi traffic.
+    
+4. **Access:** Use `http://compute:PORT` in browser.
+    
+
+---
+
+## 3. The Workstation (Coding & Math)
+
+**The Environment:** You work inside an Arch Linux container called `math-lab`.
+
+### 🖥️ Access
+
+- **Command:** `lab` (Alias for `distrobox enter math-lab`).
+    
+- **Location:** You start in `~/` (Home). Your files are in `~/University`.
+    
+
+### 🛠️ Development Workflows
+
+|**Task**|**Command / Action**|
+|---|---|
+|**Quick Nav**|`z cs101` (Zoxide jumps to CS101 folder)|
+|**C Coding**|Edit in VS Code. Run `make run` in terminal.|
+|**Python/Math**|Run `jupyter lab --no-browser --port=8888`. Open `localhost:8888`.|
+|**Visualization**|Run `manim -qm file.py SceneName`. Video saves to `media/`.|
+|**Search History**|Press `Ctrl + R` and type a command to find it.|
+
+### 💾 Backup Routine (Git)
+
+Syncthing syncs files instantly, but **Git** saves history.
+
+- **End of Session:**
+    
+    Bash
+    
+    ```
+    cd ~/University
+    git add .
+    git commit -m "Finished homework for [Date]"
+    git push
+    ```
+    
+
+---
+
+## 4. The Intelligence (AI Stack)
+
+**The Brain:** Local Qwen 7B (Optimized) running on RTX 4080.
+
+### 💬 Chat Interfaces
+
+1. **The "Matrix" Mode (Fastest):**
+    
+    - Open Terminal (Bazzite Host).
+        
+    - Command: `ai`.
+        
+    - Usage: Pure text chat. Exit with `/bye`.
+        
+2. **The "Web" Mode (Rich Text):**
+    
+    - Open Browser.
+        
+    - URL: `http://compute:8080`.
+        
+    - Usage: Code formatting, history saving.
+        
+
+---
+
+## 5. Mission Control (Web Services)
+
+You have a suite of services running in Podman containers.
+
+### 🏠 Dashboard
+
+- **URL:** `http://compute:3003` (Heimdall).
+    
+- **Usage:** Your "Start Page". Click icons to launch other tools.
+    
+
+### 🛡️ Network Defense
+
+- **URL:** `http://compute:3002` (AdGuard Home).
+    
+- **Usage:** Blocks ads network-wide. Configure Blocklists here.
+    
+
+### 📂 File Management
+
+- **URL:** `http://compute:8384` (Syncthing).
+    
+- **Sync Logic:**
+    
+    - **Mac:** `~/University` ↔ **PC:** `/home/bazzite/University` ↔ **iPhone:** `Mobius Sync/University`.
+        
+    - **Conflict:** If files don't appear, check this dashboard on all devices to see if one is "Disconnected".
+        
+
+### 📝 Productivity Stack
+
+- **Vikunja (Tasks):** `http://compute:3456`. Project management.
+    
+- **Actual Budget:** `http://compute:5006`. Finance tracking.
+    
+- **Glances:** `http://compute:61208`. System/Resource monitor.
+    
+
+---
+
+## 6. Maintenance & Updates
+
+You are the SysAdmin. Keep the engines clean.
+
+### 🔄 Weekly Update
+
+Run this **one command** on the Bazzite Host to update everything (OS, Lab, AI):
+
+Bash
+
+```
+update-all
+```
+
+_(This runs `ujust update`, `distrobox upgrade`, and pulls the latest Qwen model)._
+
+### 🧹 Cleanup
+
+If `podman ps` shows clutter or crashed containers:
+
+Bash
+
+```
+podman container prune
+```
+
+---
+
+## 7. Port Reference Map
+
+|**Service**|**Port**|**Internal IP**|**External URL**|
+|---|---|---|---|
+|**Heimdall**|`3003`|Host|`http://compute:3003`|
+|**Open WebUI**|`8080`|Host|`http://compute:8080`|
+|**AdGuard**|`3002`|Host|`http://compute:3002`|
+|**Jupyter**|`8888`|Container|`http://compute:8888`|
+|**Syncthing**|`8384`|Host|`http://compute:8384`|
+|**Vikunja**|`3456`|Host|`http://compute:3456`|
+|**Actual**|`5006`|Host|`http://compute:5006`|
+|**Glances**|`61208`|Host|`http://compute:61208`|
+
+---
+
+## 8. Troubleshooting Guide
+
+- **"Command not found: podman"**
+    
+    - _Cause:_ You are inside the `math-lab`.
+        
+    - _Fix:_ Type `exit` to return to Bazzite Host.
+        
+- **"Command not found: gcc / manim"**
+    
+    - _Cause:_ You are on the Bazzite Host.
+        
+    - _Fix:_ Type `lab` to enter the container.
+        
+- **"Connection Refused" (Browser)**
+    
+    - _Cause:_ Container is stopped or Firewall is blocking.
+        
+    - _Fix:_ `podman start [container_name]` OR `sudo firewall-cmd --add-port=[PORT]/tcp`.
+        
+- **"Wake on LAN not working"**
+    
+    - _Cause:_ Windows Fast Startup re-enabled itself or iPhone permission revoked.
+        
+    - _Fix:_ Check BIOS and Windows Control Panel power settings.
+        
+
+---
+
+End of Manual.
+
+Current Status: Ready for Academic Work.
+
+
+You have built a complex machine with many moving parts (Bazzite, Arch Linux, Podman Containers, AI Models, Network Tunnels).
+
+If you don't maintain it, **it will eventually break** (storage will fill up, keys will expire, or updates will conflict).
+
+Here is your **SysAdmin Maintenance Schedule** to keep your cluster running forever.
+
+---
+
+### 📅 Daily Routine (The "Save Game")
+
+_Do this every time you finish studying._
+
+1. Backup Your Brain (Git)
+
+Syncthing syncs files, but if you accidentally delete a 20-page thesis on your Mac, it deletes it on your PC too. Git is your only protection against mistakes.
+
+- **Command (Inside `lab`):**
+    
+    Bash
+    
+    ```
+    cd ~/University
+    git add .
+    git commit -m "End of day backup"
+    git push
+    ```
+    
+
+---
+
+### 📅 Weekly Routine (The "Sunday Clean-Up")
+
+_Do this once a week to keep software fresh._
+
+1. Run the Master Update
+
+You created an alias for this. It updates Bazzite (OS), Arch (Math Lab), and your AI models.
+
+- **Command (Bazzite Host):**
+    
+    Bash
+    
+    ```
+    update-all
+    ```
+    
+    _(This runs `ujust update`, `distrobox upgrade`, and `ollama pull`)_.
+    
+
+2. Update Your Containers
+
+Your update-all handles the OS, but not the containers like Vikunja, AdGuard, or Heimdall. Use Podman Auto-Update.
+
+- **Command (Bazzite Host):**
+    
+    Bash
+    
+    ```
+    podman auto-update
+    ```
+    
+    _Note: This only works if you created containers with `--label "io.containers.autoupdate=registry"`. Since we did manual `podman run` commands, the manual way is:_
+    
+    Bash
+    
+    ```
+    # Stop, Pull, and Restart specific containers (Example for AdGuard)
+    podman stop adguard
+    podman rm adguard
+    podman pull docker.io/adguard/adguardhome:latest
+    # ... Then run the long install command again.
+    ```
+    
+    _Better Way:_ Install **Watchtower** (from the list of 50 apps) to do this automatically for you.
+    
+
+---
+
+### 📅 Monthly Routine (The "Deep Clean")
+
+_Do this on the 1st of every month._
+
+1. Prune the Garbage (Disk Space)
+
+Podman keeps old versions of containers and AI models. After a few months, this can eat 50GB+ of space.
+
+- **Command (Bazzite Host):**
+    
+    Bash
+    
+    ```
+    podman system prune -a
+    ```
+    
+    - _Warning:_ It will ask for confirmation. Type `y`.
+        
+    - _What it does:_ Deletes stopped containers and unused images. It will **not** delete your data (volumes).
+        
+
+2. Check Tailscale Keys
+
+Tailscale security keys expire every 90 days by default. If your PC suddenly "disappears" from your Mac, this is why.
+
+- **Action:** Go to [login.tailscale.com](https://login.tailscale.com/) -> **Machines**.
+    
+- **Check:** Look for "Key Expiry" on your Bazzite PC.
+    
+- **Fix:** Click **...** -> **Disable Key Expiry** (Recommended for a stationary server).
+    
+
+3. Physical Dust Check
+
+You have an RTX 4080. It moves a lot of air.
+
+- **Action:** Look at the front intake filters of your PC case. If they are gray, wipe them. Heat kills performance.
+    
+
+---
+
+### 🚑 Emergency Procedures (When Things Break)
+
+Scenario 1: Bazzite Update Broke Something
+
+Since Bazzite is "Immutable," you can time-travel back to yesterday.
+
+- **Command:**
+    
+    Bash
+    
+    ```
+    rpm-ostree rollback
+    ```
+    
+- **Action:** Reboot. You are now back on the previous version of the OS.
+    
+
+Scenario 2: "Container Name Already in Use"
+
+If you try to restart a service and it fails:
+
+- **Command:**
+    
+    Bash
+    
+    ```
+    podman rm -f [container_name]
+    ```
+    
+    _(Then run the install command again)._
+    
+
+Scenario 3: "Disk Full"
+
+If you downloaded too many LLMs:
+
+- **Check usage:** `df -h`
+    
+- **Delete models:** `podman exec -it ollama ollama rm [model_name]`
+    
+
+---
+
+### 📜 Summary Checklist
+
+|**Frequency**|**Task**|**Command**|
+|---|---|---|
+|**Daily**|Git Push|`git push`|
+|**Weekly**|Update OS/Lab|`update-all`|
+|**Monthly**|Clean Disk|`podman system prune -a`|
+|**Monthly**|Check Tailscale|(Web Console)|
+|**Yearly**|Dust PC|(Physical)|
+
+**You are now fully certified to run this cluster.**
