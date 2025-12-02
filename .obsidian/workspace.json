@@ -11,10 +11,14 @@
             "id": "1459bd1ef8fb3497",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "user manual.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "user manual"
             }
           }
         ]
@@ -167,8 +171,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "syncthing-status-icon:Activate view": false,
-      "syncthing-integration:Open Syncthing conflict manager modal": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
