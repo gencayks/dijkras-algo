@@ -808,3 +808,4 @@ If you downloaded too many LLMs:
 **You are now fully certified to run this cluster.**
 
 podman start ollama open-webui adguard heimdall glances actual-budget vikunja pdf-tools anki-server
+
