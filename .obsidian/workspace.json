@@ -20,8 +20,19 @@
               "icon": "lucide-file",
               "title": "user manual"
             }
+          },
+          {
+            "id": "94c1d9474eac0c8f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -180,7 +191,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "1459bd1ef8fb3497",
+  "active": "94c1d9474eac0c8f",
   "lastOpenFiles": [
     "user manual.md",
     "Untitled.md",
