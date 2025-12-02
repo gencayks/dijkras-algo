@@ -1,5 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:/home/bazzite/University/Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/2016333726_1043184412_223132457.mp4'
-file 'file:/home/bazzite/University/Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/543634251_1653271960_605793187.mp4'
-file 'file:/home/bazzite/University/Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/543634251_2763419353_605793187.mp4'
-file 'file:/home/bazzite/University/Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/543634251_1839128356_2195423488.mp4'

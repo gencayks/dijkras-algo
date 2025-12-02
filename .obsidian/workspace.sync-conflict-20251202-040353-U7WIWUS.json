@@ -8,13 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1459bd1ef8fb3497",
+            "id": "0e981945fda9a133",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "manual latest.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "manual latest"
             }
           }
         ]
@@ -167,8 +171,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "syncthing-status-icon:Activate view": false,
-      "syncthing-integration:Open Syncthing conflict manager modal": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -178,27 +180,22 @@
       "bases:Create new base": false
     }
   },
-  "active": "1459bd1ef8fb3497",
+  "active": "0e981945fda9a133",
   "lastOpenFiles": [
-    "user manual.md",
-    "Untitled.md",
     "pc user manual.md",
-    "University/University/Playground/media/videos/math_beauty/720p30/FirstScene.mp4",
-    "University/University/CS101/test_system",
-    "University/University/Playground/__pycache__/math_beauty.cpython-313.pyc",
-    "University/University/Semester_01/CS101_C_Programming/Makefile",
-    "University/University/Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/543634251_1653271960_605793187.mp4",
-    "University/University/Semester_01/CS101_C_Programming/src/test.c",
-    "University/University/Playground/math_beauty.py",
-    "University/University/Semester_01/MATH102_Linear_Algebra/python_sims/graph_test.ipynb",
-    "University/University/Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/partial_movie_file_list.txt",
-    "University/University/CS101/test.c",
-    "University/University/Playground/media/texts/27044a387e056f4c.svg",
-    "University/University/pc user manual.md",
-    "hello.md.md",
     "manual latest.md",
-    "Playground/media/texts/27044a387e056f4c.svg",
+    "homelab_config/prometheus.yml",
+    "homelab_config",
     "kazo 3512.md",
-    "Playground/media/texts/27044a387e056f4c_.svg"
+    "Playground/media/videos/math_beauty/720p30/FirstScene.mp4",
+    "Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/partial_movie_file_list.txt",
+    "Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/543634251_1839128356_2195423488.mp4",
+    "Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/543634251_2763419353_605793187.mp4",
+    "Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/543634251_1653271960_605793187.mp4",
+    "Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene/2016333726_1043184412_223132457.mp4",
+    "Playground/media/texts/27044a387e056f4c_.svg",
+    "Playground/media/texts/27044a387e056f4c.svg",
+    "Playground/media/texts",
+    "Playground/media/videos/math_beauty/720p30/partial_movie_files/FirstScene"
   ]
 }

@@ -167,8 +167,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "syncthing-status-icon:Activate view": false,
-      "syncthing-integration:Open Syncthing conflict manager modal": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -180,8 +178,6 @@
   },
   "active": "1459bd1ef8fb3497",
   "lastOpenFiles": [
-    "user manual.md",
-    "Untitled.md",
     "pc user manual.md",
     "University/University/Playground/media/videos/math_beauty/720p30/FirstScene.mp4",
     "University/University/CS101/test_system",
