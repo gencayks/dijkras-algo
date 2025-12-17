@@ -1,0 +1,4 @@
+presentation/node_modules/
+presentation/.vercel/
+*.o
+dijkstra
